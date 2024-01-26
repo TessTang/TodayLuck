@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/TodayLuck/static/css/main.0307bd47.css",
-    "main.js": "/TodayLuck/static/js/main.9c43a30f.js",
+    "main.js": "/TodayLuck/static/js/main.8375450f.js",
     "static/js/787.352c8ce4.chunk.js": "/TodayLuck/static/js/787.352c8ce4.chunk.js",
     "static/media/LOGO.png": "/TodayLuck/static/media/LOGO.6473a8f6ba8760a3f9b6.png",
     "index.html": "/TodayLuck/index.html",
     "main.0307bd47.css.map": "/TodayLuck/static/css/main.0307bd47.css.map",
-    "main.9c43a30f.js.map": "/TodayLuck/static/js/main.9c43a30f.js.map",
+    "main.8375450f.js.map": "/TodayLuck/static/js/main.8375450f.js.map",
     "787.352c8ce4.chunk.js.map": "/TodayLuck/static/js/787.352c8ce4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0307bd47.css",
-    "static/js/main.9c43a30f.js"
+    "static/js/main.8375450f.js"
   ]
 }
