@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/TodayLuck/static/css/main.0307bd47.css",
-    "main.js": "/TodayLuck/static/js/main.af9d69ed.js",
-    "static/js/787.352c8ce4.chunk.js": "/TodayLuck/static/js/787.352c8ce4.chunk.js",
-    "static/media/LOGO.png": "/TodayLuck/static/media/LOGO.6473a8f6ba8760a3f9b6.png",
-    "index.html": "/TodayLuck/index.html",
-    "main.0307bd47.css.map": "/TodayLuck/static/css/main.0307bd47.css.map",
-    "main.af9d69ed.js.map": "/TodayLuck/static/js/main.af9d69ed.js.map",
-    "787.352c8ce4.chunk.js.map": "/TodayLuck/static/js/787.352c8ce4.chunk.js.map"
+    "main.css": "/TodaysLuck/static/css/main.df6e650e.css",
+    "main.js": "/TodaysLuck/static/js/main.4596ffcf.js",
+    "static/js/787.352c8ce4.chunk.js": "/TodaysLuck/static/js/787.352c8ce4.chunk.js",
+    "static/media/LOGO.png": "/TodaysLuck/static/media/LOGO.6473a8f6ba8760a3f9b6.png",
+    "index.html": "/TodaysLuck/index.html",
+    "main.df6e650e.css.map": "/TodaysLuck/static/css/main.df6e650e.css.map",
+    "main.4596ffcf.js.map": "/TodaysLuck/static/js/main.4596ffcf.js.map",
+    "787.352c8ce4.chunk.js.map": "/TodaysLuck/static/js/787.352c8ce4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0307bd47.css",
-    "static/js/main.af9d69ed.js"
+    "static/css/main.df6e650e.css",
+    "static/js/main.4596ffcf.js"
   ]
 }
