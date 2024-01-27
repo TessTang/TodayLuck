@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/TodaysLuck/static/css/main.df6e650e.css",
-    "main.js": "/TodaysLuck/static/js/main.d7039719.js",
+    "main.css": "/TodaysLuck/static/css/main.f31c985d.css",
+    "main.js": "/TodaysLuck/static/js/main.ee301978.js",
     "static/js/787.352c8ce4.chunk.js": "/TodaysLuck/static/js/787.352c8ce4.chunk.js",
     "static/media/LOGO.png": "/TodaysLuck/static/media/LOGO.6473a8f6ba8760a3f9b6.png",
     "index.html": "/TodaysLuck/index.html",
-    "main.df6e650e.css.map": "/TodaysLuck/static/css/main.df6e650e.css.map",
-    "main.d7039719.js.map": "/TodaysLuck/static/js/main.d7039719.js.map",
+    "main.f31c985d.css.map": "/TodaysLuck/static/css/main.f31c985d.css.map",
+    "main.ee301978.js.map": "/TodaysLuck/static/js/main.ee301978.js.map",
     "787.352c8ce4.chunk.js.map": "/TodaysLuck/static/js/787.352c8ce4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df6e650e.css",
-    "static/js/main.d7039719.js"
+    "static/css/main.f31c985d.css",
+    "static/js/main.ee301978.js"
   ]
 }
