@@ -1,16 +1,29 @@
 {
   "files": {
     "main.css": "/TodaysLuck/static/css/main.f31c985d.css",
-    "main.js": "/TodaysLuck/static/js/main.ee301978.js",
+    "main.js": "/TodaysLuck/static/js/main.8a02b35b.js",
     "static/js/787.352c8ce4.chunk.js": "/TodaysLuck/static/js/787.352c8ce4.chunk.js",
+    "static/media/landscape03.jpg": "/TodaysLuck/static/media/landscape03.08e0f2d92d5d6a6f477e.jpg",
     "static/media/LOGO.png": "/TodaysLuck/static/media/LOGO.6473a8f6ba8760a3f9b6.png",
+    "static/media/puppy03.jpg": "/TodaysLuck/static/media/puppy03.a0c4d2380be91cdddcd0.jpg",
+    "static/media/puppy05.jpg": "/TodaysLuck/static/media/puppy05.a76a7a51a67485d12a35.jpg",
+    "static/media/kitten02.jpg": "/TodaysLuck/static/media/kitten02.3db5ff4b7a1dc1208b53.jpg",
+    "static/media/landscape05.jpg": "/TodaysLuck/static/media/landscape05.8569a4beb8b7b181c1b6.jpg",
+    "static/media/landscape01.jpg": "/TodaysLuck/static/media/landscape01.985e0fb02b56347eb610.jpg",
+    "static/media/puppy01.jpg": "/TodaysLuck/static/media/puppy01.cb78d06df3d80233b3f2.jpg",
+    "static/media/kitten04.jpg": "/TodaysLuck/static/media/kitten04.d92c6d9e37145d56c1d3.jpg",
+    "static/media/puppy04.jpg": "/TodaysLuck/static/media/puppy04.4e259037dd2feda85c1d.jpg",
+    "static/media/kitten01.jpg": "/TodaysLuck/static/media/kitten01.88da5a6034fdf82cdde8.jpg",
+    "static/media/kitten03.jpg": "/TodaysLuck/static/media/kitten03.b77cdd86a3f993574d99.jpg",
+    "static/media/landscape04.jpg": "/TodaysLuck/static/media/landscape04.7280bc0e4a1b620f6e76.jpg",
+    "static/media/kitten05.jpg": "/TodaysLuck/static/media/kitten05.ec0ebaefbe30686efca8.jpg",
     "index.html": "/TodaysLuck/index.html",
     "main.f31c985d.css.map": "/TodaysLuck/static/css/main.f31c985d.css.map",
-    "main.ee301978.js.map": "/TodaysLuck/static/js/main.ee301978.js.map",
+    "main.8a02b35b.js.map": "/TodaysLuck/static/js/main.8a02b35b.js.map",
     "787.352c8ce4.chunk.js.map": "/TodaysLuck/static/js/787.352c8ce4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f31c985d.css",
-    "static/js/main.ee301978.js"
+    "static/js/main.8a02b35b.js"
   ]
 }
