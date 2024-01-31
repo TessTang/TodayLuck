@@ -10,7 +10,7 @@ import Button from "../../components/Button";
 import NeedSelect from "./components/NeedSelect";
 import { userZodiac, userLove } from "./assets/selectOption";
 
-export default function Needinfo({ sethadInfo }) {
+export default function Needinfo({ setHadInfo }) {
   //react hook form
   const {
     register,
@@ -22,7 +22,7 @@ export default function Needinfo({ sethadInfo }) {
   //送出後提交資料給localStorage並轉到hadinfo
   const onSubmit = (data) => {
     window.localStorage.setItem("hadInfo", JSON.stringify(data));
-    sethadInfo(JSON.parse(window.localStorage.getItem("hadInfo")));
+    setHadInfo(data);
   };
 
   return (
@@ -72,7 +72,7 @@ export default function Needinfo({ sethadInfo }) {
           id="zodiac"
           question="星座"
           deco={<FaStarOfDavid />}
-        ></NeedSelect>
+        />
         {/* love input */}
         <NeedSelect
           register={register}
@@ -81,10 +81,10 @@ export default function Needinfo({ sethadInfo }) {
           id="love"
           question="派系"
           deco={<FaGrinHearts />}
-        ></NeedSelect>
+        />
         {/* button */}
         <div className="form-group row mt-3">
-          <Button buttonText="送出" type="submit"></Button>
+          <Button buttonText="送出" type="submit" />
         </div>
       </form>
     </>

@@ -3,15 +3,9 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import testResults from "./assets/testResults";
 
-export default function Result({ userAns, setDone, setuserAns }) {
+export default function Result({ userAns, setDone, setUserAns }) {
   //將分數陣列加總
-  const userScore = userAns
-    .map((val) => {
-      return parseInt(val);
-    })
-    .reduce((a, b) => {
-      return a + b;
-    });
+  const userScore = userAns.map(Number).reduce((a, b) => a + b, 0);
 
   //找大於的分數，若高於60就是最後一個
   const userResult =
@@ -24,7 +18,7 @@ export default function Result({ userAns, setDone, setuserAns }) {
   //retest button
   const resetAns = () => {
     setDone(false);
-    setuserAns([]);
+    setUserAns([]);
   };
 
   return (
@@ -34,10 +28,10 @@ export default function Result({ userAns, setDone, setuserAns }) {
       <div className="myCenter bg-danger bg-opacity-50 py-5 px-3 rounded-3 psycholAns fs-sm-4 mb-4">
         {userResult.content}
       </div>
-      <Button onClick={resetAns} buttonText="重新測驗"></Button>
+      <Button onClick={resetAns} buttonText="重新測驗" />
 
-      <Link to="/TodayLuck" className="col-12">
-        <Button buttonText="回今日運勢頁面"> </Button>
+      <Link to="/Today's_Luck" className="col-12">
+        <Button buttonText="回今日運勢頁面" />
       </Link>
     </>
   );

@@ -5,7 +5,7 @@ import Result from "./Result";
 
 export default function Psychological() {
   //user selected
-  const [userAns, setuserAns] = useState([]);
+  const [userAns, setUserAns] = useState([]);
   //check if donetest => test||result
   const [done, setDone] = useState(false);
 
@@ -15,17 +15,9 @@ export default function Psychological() {
         菲爾人格測試：測你的內在人格特質
       </p>
       {done ? (
-        <Result
-          userAns={userAns}
-          setuserAns={setuserAns}
-          setDone={setDone}
-        ></Result>
+        <Result userAns={userAns} setUserAns={setUserAns} setDone={setDone} />
       ) : (
-        <Test
-          setDone={setDone}
-          userAns={userAns}
-          setuserAns={setuserAns}
-        ></Test>
+        <Test setDone={setDone} userAns={userAns} setUserAns={setUserAns} />
       )}
     </div>
   );

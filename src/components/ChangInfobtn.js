@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import { UserContext } from "../App";
 
-export default function ChangInfobtn({ btnClass }) {
-  const { sethadInfo } = useContext(UserContext);
+export default function ChangInfobtn() {
+  const { setHadInfo } = useContext(UserContext);
   return (
     <button
-      className={`${btnClass} btn btn-danger changeBottom`}
+      className="btn btn-danger changeBottom"
       onClick={() => {
         window.localStorage.removeItem("hadInfo");
-        sethadInfo(false);
+        setHadInfo(false);
       }}
     >
       變更設定

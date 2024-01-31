@@ -121,11 +121,11 @@ a {
 
 .changeBottom {
   position: absolute;
-  top: 15%;
-  left: 85%;
+  top: 5%;
+  right: 1%;
   padding: 3px;
-  width: 50px;
-  height: 50px;
+  width: 47px;
+  height: 47px;
   border-radius: 50%;
   font-size: 0.9rem;
   line-height: 1.2;
@@ -168,12 +168,6 @@ a {
 }
 
 //todayluck
-
-.inTodayLuck.changeBottom {
-  top: 15px;
-  left: 80%;
-}
-
 .todayLuckOuter {
   display: flex;
   flex-direction: column;

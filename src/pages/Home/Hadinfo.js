@@ -5,6 +5,7 @@ import axios from "axios";
 
 import Button from "../../components/Button";
 import ChangInfobtn from "../../components/ChangInfobtn";
+import prepImages from "./assets/hadInfoPreventImg";
 
 import { FaFeatherAlt } from "react-icons/fa";
 
@@ -17,7 +18,7 @@ export default function Hadinfo({ hadInfo }) {
   //抓到後渲染圖片&按鈕
 
   //問候語
-  let nowTime = new Date().getHours();
+  const nowTime = new Date().getHours();
   let hello;
   if (nowTime < 11) {
     hello = "早安";
@@ -29,25 +30,30 @@ export default function Hadinfo({ hadInfo }) {
     hello = "你好!";
   }
 
-  const [picResult, setpicResult] = useState({});
-  const [isLoading, setisLoading] = useState(true);
+  const [picResult, setPicResult] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   //抓取資料並搜尋unsplash，若超過次數用accesskey2
+  //若都失敗轉內部圖片
+
   useEffect(() => {
     const getPic = async () => {
       try {
         const res = await axios.get(
           `https://api.unsplash.com/photos/random?client_id=${accessKey1}&query=${hadInfo.love}&orientation=portrait&count=5`,
         );
-        setpicResult(res.data);
+        setPicResult(res.data);
       } catch (err) {
-        console.log(err);
-        const res = await axios.get(
-          `https://api.unsplash.com/photos/random?client_id=${accessKey2}&query=${hadInfo.love}&orientation=portrait&count=5`,
-        );
-        setpicResult(res.data);
+        try {
+          const res = await axios.get(
+            `https://api.unsplash.com/photos/random?client_id=${accessKey2}&query=${hadInfo.love}&orientation=portrait&count=5`,
+          );
+          setPicResult(res.data);
+        } catch (err) {
+          console.log(err, "內部圖片");
+        }
       } finally {
         setTimeout(() => {
-          setisLoading(false);
+          setIsLoading(false);
         }, 1000);
       }
     };
@@ -55,7 +61,7 @@ export default function Hadinfo({ hadInfo }) {
   }, []);
 
   //loading component
-  const Loadingphoto = () => {
+  const LoadingPhoto = () => {
     return (
       <>
         <p className="fs-5 mb-auto ">
@@ -68,7 +74,7 @@ export default function Hadinfo({ hadInfo }) {
   };
 
   //gotphoto component
-  const Gotphoto = () => {
+  const GotPhoto = () => {
     return (
       <>
         <p className="fs-5">
@@ -95,20 +101,49 @@ export default function Hadinfo({ hadInfo }) {
         <small className="fst-italic fw-lighter d-block">
           - 點擊圖片可連結到Unsplash -
         </small>
-        <Link to="/TodayLuck">
-          <Button buttonText={"吸飽了!"}></Button>
+        <Link to="/Today's_Luck">
+          <Button buttonText={"吸飽了!"} />
         </Link>
       </>
     );
   };
 
+  //prepare photo component
+  const PrepPhoto = () => {
+    return (
+      <>
+        <p className="fs-5">
+          今日圖片抵達
+          <FaFeatherAlt />
+        </p>
+        <Carousel className="homeHadimg">
+          {prepImages[hadInfo.love].map((val) => {
+            return (
+              <Carousel.Item key={val.alt}>
+                <img src={val.loc} alt={val.alt} />
+              </Carousel.Item>
+            );
+          })}
+        </Carousel>
+        <Link to="/Today's_Luck">
+          <Button buttonText={"吸飽了!"} />
+        </Link>
+      </>
+    );
+  };
+
+  //check if gotphoto
+  const checkPhoto = () => (picResult.length ? <GotPhoto /> : <PrepPhoto />);
+
   return (
-    <div className="flex-grow d-flex flex-column justify-content-between">
-      <ChangInfobtn></ChangInfobtn>
-      <p className="fs-5 fw-bold bg-success width-fit px-5 py-1 rounded-5 lh-sm mx-auto">
-        {hadInfo.name} {hello}!
-      </p>
-      {isLoading ? <Loadingphoto /> : <Gotphoto />}
-    </div>
+    <>
+      <ChangInfobtn />
+      <div className="flex-grow d-flex flex-column justify-content-between">
+        <p className="fs-5 fw-bold bg-success width-fit px-5 py-1 rounded-5 lh-sm mx-auto">
+          {hadInfo.name} {hello}!
+        </p>
+        {isLoading ? <LoadingPhoto /> : checkPhoto()}
+      </div>
+    </>
   );
 }

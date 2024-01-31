@@ -10,14 +10,14 @@ import Hadinfo from "./Hadinfo";
 //若無資料就到Needinfo，有資料到Hadinfo
 
 export default function Home() {
-  const { hadInfo, sethadInfo } = useContext(UserContext);
+  const { hadInfo, setHadInfo } = useContext(UserContext);
 
   return (
     <IconContext.Provider value={{ size: 20, className: "reactIcon" }}>
       {hadInfo ? (
         <Hadinfo hadInfo={hadInfo} />
       ) : (
-        <Needinfo sethadInfo={sethadInfo} />
+        <Needinfo setHadInfo={setHadInfo} />
       )}
     </IconContext.Provider>
   );

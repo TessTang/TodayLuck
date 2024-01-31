@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import Button from "../../components/Button";
 import questions from "./assets/questions";
 
-export default function Test({ setDone, userAns, setuserAns }) {
+export default function Test({ setDone, userAns, setUserAns }) {
   //userOptions
   const [selectedOption, setSelectedOption] = useState("");
   //click radio => label css
@@ -23,23 +23,21 @@ export default function Test({ setDone, userAns, setuserAns }) {
   } = useForm();
 
   //register name更新
-  let myans = "ans" + String(qusNum);
+  const myans = "ans" + String(qusNum);
 
   //到最後一題時設定setDone完成跳轉Result頁面
   function onSubmit(data) {
     if (qusNum === questions.length - 1) {
-      setuserAns([...userAns, data[`ans${qusNum}`]]);
+      setUserAns((pre) => [...pre, data[`ans${qusNum}`]]);
       setDone(true);
       return;
     }
-    setuserAns([...userAns, data[`ans${qusNum}`]]);
+    setUserAns((pre) => [...pre, data[`ans${qusNum}`]]);
     setqusNum((pre) => {
       return pre + 1;
     });
     setSelectedOption("");
   }
-  console.log(userAns);
-  console.log(`ans${qusNum}`);
 
   return (
     <form
@@ -52,16 +50,16 @@ export default function Test({ setDone, userAns, setuserAns }) {
         {questions[qusNum].answer.map((val) => {
           return (
             <label
-              key={val[1]}
-              className={`fs-sm-5 hvr-wobble-skew ${selectedOption === val[1] ? "checked" : ""}`}
+              key={val.text}
+              className={`fs-sm-5 hvr-wobble-skew ${selectedOption === val.value ? "checked" : ""}`}
             >
               <input
                 type="radio"
-                value={val[1]}
+                value={val.value}
                 onClick={handleChange}
                 {...register(`ans${qusNum}`, { required: true })}
               />
-              {val[0]}
+              {val.text}
             </label>
           );
         })}

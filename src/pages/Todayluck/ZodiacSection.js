@@ -3,7 +3,8 @@ import { UserContext } from "../../App";
 
 export default function ZodiacSection({ zodiacData }) {
   const { hadInfo } = useContext(UserContext);
-  let myZodiac = zodiacData.current[hadInfo.zodiac];
+  const myZodiac = zodiacData[hadInfo.zodiac];
+
   return (
     <>
       <li className="todayLuckrow row">

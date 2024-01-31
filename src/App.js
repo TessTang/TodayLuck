@@ -1,13 +1,11 @@
-import { useEffect, useState, useRef, createContext } from "react";
+import { useEffect, useState, useRef, createContext, useMemo } from "react";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
-import axiosRetry from "axios-retry";
-
 import CLOUDS from "vanta/dist/vanta.clouds.min";
 
 import "./assets/scss/all.scss";
 import Home from "./pages/Home";
-import Todayluck from "./pages/Todayluck";
+import TodayLuck from "./pages/TodayLuck";
 import Psychological from "./pages/Psychological";
 
 //user information context
@@ -29,7 +27,7 @@ function App() {
           minWidth: 200.0,
           sunColor: 0xe18f28,
           sunlightColor: 0xc57629,
-          speed: 0.6,
+          speed: 1,
         }),
       );
     }
@@ -39,46 +37,36 @@ function App() {
   }, [vantaEffect]);
 
   //haduserinfo state
-  const [hadInfo, sethadInfo] = useState(
+  const [hadInfo, setHadInfo] = useState(
     JSON.parse(window.localStorage.getItem("hadInfo")),
   );
   //user information context
-  const userContextValue = {
-    hadInfo,
-    sethadInfo,
-  };
+  const userContextValue = useMemo(
+    () => ({
+      hadInfo,
+      setHadInfo,
+    }),
+    [hadInfo],
+  );
 
   //get LUNAR ZODIAC DATA
-  const [luckDtatIsLoading, setluckDtatIsLoading] = useState(true);
-  const zodiacData = useRef([]);
-  const lunarData = useRef([]);
+  const [zodiacData, setZodiacData] = useState([]);
+  const [lunarData, setLunarData] = useState([]);
 
   useEffect(() => {
-    axiosRetry(axios, {
-      retries: 3,
-      retryDelay: (retryCount) => {
-        console.log(`retry attempt: ${retryCount}`);
-        return retryCount * 15000;
-      },
-      retryCondition: (error) => {
-        if (error.response === undefined) {
-          console.log("noo");
-        }
-        return true;
-      },
-    });
-
     axios
       .all([
-        axios.get('https://todayluck-nodeinfo.onrender.com/lunar'),
-        axios.get('https://todayluck-nodeinfo.onrender.com/zodiac')
+        axios.get("https://todayluck-nodeinfo.onrender.com/lunar"),
+        axios.get("https://todayluck-nodeinfo.onrender.com/zodiac"),
       ])
       .then((res) => {
-        lunarData.current = res[0].data;
-        zodiacData.current = res[1].data;
-        setluckDtatIsLoading(false);
+        setLunarData(res[0].data);
+        setZodiacData(res[1].data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setLunarData("err");
+        setZodiacData("err");
+      });
   }, []);
 
   return (
@@ -88,21 +76,17 @@ function App() {
           <h1 className="myLogo logoIndex col-12">中西迷信網</h1>
 
           <Routes>
-            <Route path="/" exact element={<Home></Home>}></Route>
+            <Route path="/" element={<Home />} />
             <Route
-              path="/TodayLuck"
+              path="/Today's_Luck"
               element={
-                <Todayluck
+                <TodayLuck
                   zodiacData={zodiacData}
                   lunarData={lunarData}
-                  luckDtatIsLoading={luckDtatIsLoading}
-                ></Todayluck>
+                ></TodayLuck>
               }
-            ></Route>
-            <Route
-              path="/Psychological"
-              element={<Psychological></Psychological>}
-            ></Route>
+            />
+            <Route path="/Psychological" element={<Psychological />} />
           </Routes>
         </div>
       </div>
