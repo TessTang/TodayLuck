@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { motion } from 'framer-motion';
+import { motionContainer, item } from '../../assets/motionfunc';
 
 import Button from "../../components/Button";
 import questions from "./assets/questions";
 
-export default function Test({ setDone, userAns, setUserAns }) {
+export default function Test({ setDone, setUserAns}) {
   //userOptions
   const [selectedOption, setSelectedOption] = useState("");
   //click radio => label css
@@ -40,16 +42,16 @@ export default function Test({ setDone, userAns, setUserAns }) {
   }
 
   return (
-    <form
+    <motion.form  variants={motionContainer} initial="start" animate="end" 
       onSubmit={handleSubmit(onSubmit)}
       className="flex-grow d-flex flex-column w-75"
     >
-      <span className="fs-sm-4 d-block">- {questions[qusNum].id} -</span>
-      <p className="fs-sm-4">{questions[qusNum].question}</p>
-      <div className="d-flex flex-column justify-content-around bg-danger bg-opacity-50 p-3 rounded-3 gap-2 psycholQues mb-2">
+      <motion.span  variants={item} className="fs-sm-4 d-block">- {questions[qusNum].id} -</motion.span>
+      <motion.p variants={item}  className="fs-sm-4">{questions[qusNum].question}</motion.p>
+      <motion.div key={qusNum} variants={motionContainer} initial="start" animate="end"  className="d-flex flex-column justify-content-around bg-danger bg-opacity-50 p-3 rounded-3 gap-2 psycholQues mb-2">
         {questions[qusNum].answer.map((val) => {
           return (
-            <label
+            <motion.label  variants={item} 
               key={val.text}
               className={`fs-sm-5 hvr-wobble-skew ${selectedOption === val.value ? "checked" : ""}`}
             >
@@ -60,10 +62,10 @@ export default function Test({ setDone, userAns, setUserAns }) {
                 {...register(`ans${qusNum}`, { required: true })}
               />
               {val.text}
-            </label>
+            </motion.label>
           );
         })}
-      </div>
+      </motion.div>
       <div>
         <Button
           buttonText="下一題"
@@ -75,6 +77,6 @@ export default function Test({ setDone, userAns, setUserAns }) {
           </div>
         </Button>
       </div>
-    </form>
+    </motion.form>
   );
 }

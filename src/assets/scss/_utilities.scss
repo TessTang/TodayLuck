@@ -170,8 +170,6 @@ a {
 //todayluck
 .todayLuckOuter {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   flex-grow: 1;
   border: 3px rgba(0, 0, 0, 0.377) solid;
   border-radius: 15px;
@@ -203,6 +201,7 @@ a {
 /* HTML: <div class="loader"></div> */
 .loader {
   margin: 0 auto;
+  height: 20px;
   width: fit-content;
   font-size: 17px;
   font-family: monospace;

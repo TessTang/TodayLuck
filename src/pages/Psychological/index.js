@@ -9,6 +9,7 @@ export default function Psychological() {
   //check if donetest => test||result
   const [done, setDone] = useState(false);
 
+
   return (
     <div className="d-flex flex-column align-items-center psychoLogical_Outer w-100">
       <p className="btn btn-success fs-sm-4 mb-1 fw-bold">
@@ -17,7 +18,7 @@ export default function Psychological() {
       {done ? (
         <Result userAns={userAns} setUserAns={setUserAns} setDone={setDone} />
       ) : (
-        <Test setDone={setDone} userAns={userAns} setUserAns={setUserAns} />
+        <Test setDone={setDone} setUserAns={setUserAns} />
       )}
     </div>
   );

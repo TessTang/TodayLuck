@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 import Button from "../../components/Button";
 import ChangInfobtn from "../../components/ChangInfobtn";
 import LunarSection from "./LunarSection";
@@ -20,14 +19,14 @@ export default function TodayLuck({ zodiacData, lunarData }) {
         {zodiacData.length === 0 ? (
           <Loadingpage />
         ) : (
-          <LunarSection lunarData={lunarData} />
+          <LunarSection lunarData={lunarData}/>
         )}
       </ul>
       <ul className="fs-md-5 todayLuckOuter container-sm bg-primary bg-opacity-10 p-2">
         {lunarData.length === 0 ? (
           <Loadingpage />
         ) : (
-          <ZodiacSection zodiacData={zodiacData} />
+          <ZodiacSection zodiacData={zodiacData}/>
         )}
       </ul>
       <Link to="/Psychological" className="col-12">
