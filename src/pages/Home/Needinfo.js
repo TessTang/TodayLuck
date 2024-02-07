@@ -9,7 +9,7 @@ import { BsFillHandThumbsUpFill } from "react-icons/bs";
 import Button from "../../components/Button";
 import NeedSelect from "./components/NeedSelect";
 import { userZodiac, userLove } from "./assets/selectOption";
-import { motionContainer, item } from '../../assets/motionfunc';
+import { motionContainer, item } from "../../assets/motionfunc";
 
 export default function Needinfo({ setHadInfo }) {
   //react hook form
@@ -33,11 +33,16 @@ export default function Needinfo({ setHadInfo }) {
         還可以做個心理測驗!
         <BsFillHandThumbsUpFill />
       </p>
-      <form variants={motionContainer} initial="start" animate="end" 
+      <form
+        variants={motionContainer}
+        initial="start"
+        animate="end"
         onSubmit={handleSubmit(onSubmit)}
         className="flex-grow-1 d-flex flex-column justify-content-around"
       >
-        <p variants={item} className="fs-5 fs-sm-4 mb-3">請先填寫資料:</p>
+        <p variants={item} className="fs-5 fs-sm-4 mb-3">
+          請先填寫資料:
+        </p>
         {/* name input */}
         <div className="form-group row px-3 justify-content-center gap-1 mt-1">
           <label

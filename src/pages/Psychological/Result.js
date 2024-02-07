@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 import Button from "../../components/Button";
 import testResults from "./assets/testResults";
-import { motion } from 'framer-motion';
-import { motionContainer, item } from '../../assets/motionfunc';
+import { motion } from "framer-motion";
+import { motionContainer, item } from "../../assets/motionfunc";
 
 export default function Result({ userAns, setDone, setUserAns }) {
   //將分數陣列加總
@@ -24,10 +24,17 @@ export default function Result({ userAns, setDone, setUserAns }) {
   };
 
   return (
-    <motion.div variants={motionContainer} initial="start" animate="end" >
-      <motion.span variants={item} className="fs-sm-4 d-block">- 結果 -</motion.span>
-      <motion.p variants={item} className="fs-sm-4">{userResult.title}</motion.p>
-      <motion.div variants={item} className="myCenter bg-danger bg-opacity-50 py-5 px-3 rounded-3 psycholAns fs-sm-4 mb-4">
+    <motion.div variants={motionContainer} initial="start" animate="end">
+      <motion.span variants={item} className="fs-sm-4 d-block">
+        - 結果 -
+      </motion.span>
+      <motion.p variants={item} className="fs-sm-4">
+        {userResult.title}
+      </motion.p>
+      <motion.div
+        variants={item}
+        className="myCenter bg-danger bg-opacity-50 py-5 px-3 rounded-3 psycholAns fs-sm-4 mb-4"
+      >
         {userResult.content}
       </motion.div>
       <Button onClick={resetAns} buttonText="重新測驗" />

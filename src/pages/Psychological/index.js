@@ -9,7 +9,6 @@ export default function Psychological() {
   //check if donetest => test||result
   const [done, setDone] = useState(false);
 
-
   return (
     <div className="d-flex flex-column align-items-center psychoLogical_Outer w-100">
       <p className="btn btn-success fs-sm-4 mb-1 fw-bold">
