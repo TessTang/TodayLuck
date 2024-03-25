@@ -1,18 +1,15 @@
 # Today's Luck
 
----
 
 ![image](https://github.com/TessTang/TodaysLuck/blob/main/src/assets/ReadMePage.jpg)
 
 > [此專案設計每日取得農民曆與個人星座資訊，還有另外創了心理測驗功能。]
 
 
----
 
 ## 網址連結
 https://tesstang.github.io/TodaysLuck/
 
----
 
 ## 簡介與頁面介紹
 * 以 React.js 框架實作網站
@@ -37,7 +34,6 @@ https://tesstang.github.io/TodaysLuck/
 
 ## 畫面
 
----
 * 首頁-背景套用 Vanta.js 雲朵動畫，創造互動效果
 ![](https://github.com/TessTang/TodaysLuck/blob/main/src/assets/HomePage.gif)
 
@@ -51,7 +47,6 @@ https://tesstang.github.io/TodaysLuck/
 
 ## 安裝流程
 
----
 
 1. 開啟終端機，執行以下指令：
 `$ git clone https://github.com/TessTang/TodaysLuck.git`
