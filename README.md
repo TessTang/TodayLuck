@@ -3,7 +3,7 @@
 
 ![image](https://github.com/TessTang/TodaysLuck/blob/main/src/assets/ReadMePage.jpg)
 
-> [此專案設計每日取得農民曆與個人星座資訊，還有另外創了心理測驗功能。]
+> 此專案設計每日取得農民曆與個人星座資訊，還有另外創了心理測驗功能。
 
 
 
