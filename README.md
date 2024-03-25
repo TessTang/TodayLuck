@@ -13,15 +13,15 @@ https://tesstang.github.io/TodaysLuck/
 
 ## 簡介與頁面介紹
 * 以 React.js 框架實作網站
-* 架設Node.js網頁爬蟲星座與農民曆資料
-* 以Framer Motion製作動畫效果
+* 架設 Node.js 網頁爬蟲星座與農民曆資料
+* 以 Framer Motion 製作動畫效果
 
 ### 頁面:
 1. 首頁：
-    - [x] 可輸入資料，將資料儲存在localstorage
+    - [x] 可輸入資料，將資料儲存在 localStorage
     - [x] 其他頁面可連接回此頁再次更改資料
 2. 圖片：
-    - [x] 根據使用者輸入資料串接Unsplash圖片
+    - [x] 根據使用者輸入資料串接 Unsplash 圖片
     - [x] 圖片每日五張輪播
     - [x] 讓使用者減少等待後端喚醒之時間
 
@@ -40,7 +40,7 @@ https://tesstang.github.io/TodaysLuck/
 * 圖片-依照使用者喜好每日提供五張隨機圖片輪播
 ![image](https://github.com/TessTang/TodaysLuck/blob/main/src/assets/ReadMePic.jpg)
 
-* Framer Motion製作簡單動畫讓畫面不單調
+* Framer Motion 製作簡單動畫讓畫面不單調
 ![](https://github.com/TessTang/TodaysLuck/blob/main/src/assets/FramerMotion.gif)
 
 
@@ -63,7 +63,7 @@ https://tesstang.github.io/TodaysLuck/
 ## 資料夾說明
 * public - 靜態檔案放置處
 * src
-    * assets - 圖片/scss放置處
+    * assets - 圖片/scss 放置處
     * components - React 元件放置處
     * pages - 頁面元件放置處
 
